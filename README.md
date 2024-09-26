@@ -18,6 +18,10 @@ The matching is case-insensitive for protocols.
 It generates an output file with the required statistics: count of matches for each tag and count of matches for each port/protocol combination.
 
 
+Testing Overview
+
+To ensure the program functions as expected, I performed several tests covering different scenarios. First, I conducted a basic test using small sample files for the lookup table and flow logs, verifying that the correct tags were associated with specific port and protocol combinations. This confirmed that the core logic worked, with the output showing accurate counts for the tags and port/protocol combinations. Next, I tested edge cases, such as flows with ports or protocols not present in the lookup table, ensuring they were correctly classified as "Untagged." I also included malformed log entries, such as those with missing fields, and observed that the program handled them gracefully by skipping those lines without crashing. Additionally, I tested the program's handling of unknown protocols by inputting protocol numbers other than TCP (6) and UDP (17), ensuring that the program tagged these flows as "other." Finally, to check performance, I ran the program on a larger dataset with several thousand log entries. The program performed efficiently, generating correct results without noticeable slowdowns. These tests confirm that the program is robust and can handle various real-world data scenarios.
+
 
 
 
