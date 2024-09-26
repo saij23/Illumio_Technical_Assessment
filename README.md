@@ -2,8 +2,11 @@ So here's what I did,  defined a PortProtocol class to represent the combination
 
 
 Then after that step the loadLookupTable method reads the CSV file containing the lookup table and creates a Map<PortProtocol, List<String>> to store the mappings.
+
 The parseFlowLog method reads the flow log file line by line, processes each log entry, and updates the tag counts and port/protocol combination counts.
+
 The writeOutput method writes the results to the output CSV file.
+
 The main method orchestrates the entire process.
 
 
@@ -12,9 +15,13 @@ The main method orchestrates the entire process.
 So this implementation meets all the requirements:
 
 It reads plain text (ASCII) input files.
+
 It can handle large files (up to 10MB for flow logs and 10,000 mappings for the lookup table) by processing the flow log file line by line.
+
 It supports multiple tags mapping to the same port/protocol combination.
+
 The matching is case-insensitive for protocols.
+
 It generates an output file with the required statistics: count of matches for each tag and count of matches for each port/protocol combination.
 
 
